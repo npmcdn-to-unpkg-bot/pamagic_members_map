@@ -28,7 +28,8 @@ body,
 /*** Header ***/
 .container {
     height: 15%;
-    width: inherit;
+    width: 100%;
+    background: #888;
 }
 
 
