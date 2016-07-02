@@ -31,12 +31,14 @@ map = L.map('map', {
 });
 
 // Zoom Home Control
+/*
 zoomHomeControl = L.Control.zoomHome({
     position: 'topleft',
     zoomHomeTitle: 'Full map extent',
     homeCoordinates: homeCoords,
     homeZoom: initZoom
 }).addTo(map);
+*/
 
 /*** Layer Control ***/
 basemapGroup = {};
