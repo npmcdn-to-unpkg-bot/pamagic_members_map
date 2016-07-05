@@ -9,6 +9,7 @@
 //var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 //var windowArea = windowWidth * windowHeight;
 // map and controls
+// Map & Controls
 var map;
 var homeCoords = [40.914722, -77.774722];
 var initZoom = 8;
@@ -17,6 +18,11 @@ var zoomHome;
 var basemapGroup;
 //var overlayGroup;
 var layerControl;
+// Layers
+var esriGray;
+var esriStreets;
+var pmgMembers;
+
 
 
 /*********************
@@ -26,9 +32,16 @@ var layerControl;
 // Map
 map = L.map('map', {
    center: homeCoords,
+   zoom: initZoom      
+});
+
+/*
+map = L.map('map', {
+   center: homeCoords,
    zoom: initZoom,
    zoomControl: false   
 });
+*/
 
 // Zoom Home Control
 /*
@@ -40,8 +53,19 @@ zoomHomeControl = L.Control.zoomHome({
 }).addTo(map);
 */
 
+// Layers
+esriGray = L.esri.basemapLayer('Gray').addTo(map);
+esriStreets = L.esri.basemapLayer('Streets');
+
+pmgMembers = L.esri.featureLayer({
+    url: 'http://services2.arcgis.com/1mAVlDOwOjpt8pyU/arcgis/rest/services/PAMAGIC_Members/FeatureServer/0'
+}).addTo(map);
+
 /*** Layer Control ***/
-basemapGroup = {};
+basemapGroup = {
+    'Gray Canvas': esriGray,
+    'Streets': esriStreets
+};
 
 //overlayGroup = {};
 
