@@ -25,9 +25,18 @@ body {
 html,
 body,
 div,
-h1 {
+h1,
+h2,
+h3,
+h4,
+ul,
+li {
     margin: 0;
     padding: 0;
+}
+
+ul {
+    list-style-type: none;
 }
 
 html,
@@ -53,4 +62,20 @@ body,
 /*** Map ***/
 #map {
     height: 88%;
+}
+
+/*** Layer Popup ***/
+.feat-popup {
+    font-size: 1.1em;
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
+    }
+
+.feat-popup h2 {
+    font-size: 1.4em;
+    text-align: center;
+}
+
+.feat-popup h4 {
+    font-size: 1.15em;
+    margin: 15px 0;
 }
