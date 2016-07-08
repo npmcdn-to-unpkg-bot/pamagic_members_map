@@ -36,11 +36,11 @@ li {
 
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-nav>li>a:hover {
-    color: #63DCEE
+    color: #FFFF00;
 }
 
-.btn-default:hover {
-    background-color: #63DCEE;
+.navbar .btn-default:hover {
+    background-color: #FFFF00;
 }
 
 /*** Layer Popup ***/
