@@ -14,7 +14,7 @@
         <!-- Leaflet -->
         <link rel="stylesheet" href="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.css" />
         <!-- ESRI Leaflet Geocoder -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/leaflet.esri.geocoder/1.0.2/esri-leaflet-geocoder-src.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/leaflet.esri.geocoder/1.0.2/esri-leaflet-geocoder.css" />
         <!-- Custom App Styles -->
         <link rel="stylesheet" href="assets/css/style.css" />
     </head>
@@ -41,11 +41,12 @@
                 <li><a href="#" data-toggle="modal" data-target="#aboutModal">About</a></li>
                 <li><a href="#" data-toggle="modal" data-target="#disclaimerModal">Disclaimer</a></li>
               </ul>
-              <form class="navbar-form navbar-right" role="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Search">
-                </div>
-                <button type="submit" class="btn btn-default">Submit</button>
+              <form class="navbar-form navbar-right navbar-search" role="search">
+                <!-- <div class="form-group"> -->
+                  <!-- <input type="text" class="form-control" placeholder="Search"> -->
+                  <div id="geocode" class="geocode-navbar"></div>       
+                <!--</div>
+                <button type="submit" class="btn btn-default">Submit</button> -->
               </form>
              </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
@@ -101,6 +102,10 @@
         <script src="https://cdn.jsdelivr.net/leaflet.esri.renderers/1.0.1/esri-leaflet-renderers.js"></script>
         <!-- ESRI Leaflet Geocoder -->
         <script src="https://cdn.jsdelivr.net/leaflet.esri.geocoder/1.0.2/esri-leaflet-geocoder.js"></script>
+        <!-- Map Functions Module -->
+        <script src="assets/js/mapFunctions.js"></script>
+        <!-- Geocode Module -->
+        <script src="assets/js/geocode.js"></script>
         <!-- Map App -->
         <script src="assets/js/map.js"></script>
     </body>
