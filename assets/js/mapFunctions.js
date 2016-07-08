@@ -29,7 +29,7 @@ function setPopupMaxHeight(windowArea) {
     if (windowArea < 315000 ) {
         maxHeight = 150;
     } else {
-        maxHeight = 500;
+        maxHeight = 300;
     }
     return maxHeight;
 }
@@ -55,18 +55,16 @@ window.addEventListener('resize', function() {
 }, false);
 
 $(document).ready(function(){
-    // Basemap changed
-	$("#selectStandardBasemap").on("change", function(e) {
-        setBasemap($(this).val());
-    });
     // Search
     var input = $(".geocoder-control-input");
+    /*
     input.focus(function(){
         $("#panelSearch .panel-body").css("height", "150px");
     });
     input.blur(function(){
         $("#panelSearch .panel-body").css("height", "auto");
     });
+    */
     // Attach search control for desktop or mobile
     function attachSearch() {
         var parentName = $(".geocoder-control").parent().attr("id"),
@@ -74,7 +72,7 @@ $(document).ready(function(){
             width = $(window).width();
         if (width <= 767 && parentName !== "geocodeMobile") {
             geocoder.detach();
-            $("#geocodeMobile").append(geocoder);
+            $('#navList').append(geocoder);
         } else if (width > 767 && parentName !== "geocode"){
             geocoder.detach();
             $("#geocode").append(geocoder);
