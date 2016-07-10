@@ -43,6 +43,12 @@ li {
     background-color: #FFFF00;
 }
 
+/*** Geocode Control ***/
+.geocoder-control-expanded, 
+.leaflet-touch .geocoder-control-expanded {
+    margin-top: 4px;
+}
+
 /*** Layer Popup ***/
 .feat-popup {
     font-size: 1.1em;
@@ -57,4 +63,24 @@ li {
 .feat-popup h4 {
     font-size: 1.15em;
     margin: 15px 0;
+}
+
+/*** Media Query ***/
+@media screen and (max-width: 767px) {    
+    /* need to fine tune */
+    /* left: 0 is original value */
+    .geocoder-control-input {
+        left: 25%;
+    }
+    
+    .geocoder-control-expanded, 
+    .leaflet-touch .geocoder-control-expanded {
+        margin: 10px auto;
+        width: auto;
+        min-width: 200px;
+    }
+    
+    nav.navbar.navbar-default.navbar-fixed-top {
+        text-align: center;
+    }
 }
