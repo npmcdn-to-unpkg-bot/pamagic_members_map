@@ -50,11 +50,10 @@ function addressLocator() {
        if (data.results.length > 0) {
            // open pop-up for location
            map.setView(data.results[0].latlng);
-           var popup = L.popup()
+           var popup = L.popup({maxWidth: setPopupMaxWidth(windowWidth)})
            .setLatLng(data.results[0].latlng)
            .setContent(data.results[0].text)
-           .openOn(map);
-           //map.setView(data.results[0].latlng);
+           .openOn(map);           
        }
     });
 }
