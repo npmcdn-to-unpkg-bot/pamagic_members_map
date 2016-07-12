@@ -60,7 +60,7 @@ esriGray = L.esri.basemapLayer('Gray').addTo(map);
 esriStreets = L.esri.basemapLayer('Streets');
 
 pmgMembers = L.esri.featureLayer({
-    url: 'http://services2.arcgis.com/1mAVlDOwOjpt8pyU/arcgis/rest/services/PAMAGIC_Members/FeatureServer/0',
+    url: 'https://services2.arcgis.com/1mAVlDOwOjpt8pyU/arcgis/rest/services/PAMAGIC_Members/FeatureServer/0',
     onEachFeature: function (feature, layer) {
         var popupContent = L.Util.template('<div class="feat-popup"><h2>{FirstName} {LastName}</h2><hr /><h4>Contact Information</h4><ul><li>Phone Number: {TelephoneN}</li><li>E-mail: {EmailAddre}</li><li>Address: {AddressLin}, {City_1}, {State } {ZipCode}</li></ul></div>', feature.properties);
 		layer.bindPopup(popupContent, {closeOnClick: true, maxHeight: setPopupMaxHeight(windowArea), maxWidth: setPopupMaxWidth(windowWidth)});
