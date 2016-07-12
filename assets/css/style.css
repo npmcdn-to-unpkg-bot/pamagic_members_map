@@ -98,9 +98,11 @@ li {
         min-height: 200px;
     }
     
+    /*
     .geocoder-control {
        left: 15px;
     }
+    */
     
     .geocoder-control-expanded, 
     .leaflet-touch .geocoder-control-expanded {
