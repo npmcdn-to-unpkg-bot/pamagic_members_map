@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /****************
 *** Variables ***
@@ -29,9 +29,9 @@ var pmgMembers;
 function viewportChangeMapZoom(windowWidth) {
     if (windowWidth < 500) {
         map.setZoom(6);
-    }  else if (windowWidth >= 500 && windowWidth < 1000) {
+    } else if (windowWidth >= 500 && windowWidth < 1000) {
         map.setZoom(7);
-    }  else {
+    } else {
        map.setZoom(8);
     }
 }
