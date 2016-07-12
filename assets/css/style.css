@@ -66,13 +66,16 @@ li {
 }
 
 /*** Media Query ***/
-@media screen and (max-width: 767px) {    
-    #navList h5.hidden,
-    #navList hr.hidden{
-        display: block !important;
+/* 314px */
+@media screen and (max-width: 314px) {
+    body {
+        padding-top: 100px;
     }
-    
-    #navList h5.hidden {
+}
+
+/* 767px */
+@media screen and (max-width: 767px) {    
+    #navList h5 {
         color: #ddd;
         padding-left: 15px;
         font-weight: bold;
