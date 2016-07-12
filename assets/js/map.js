@@ -11,7 +11,7 @@ var windowArea = windowWidth * windowHeight;
 // Map & Controls
 var map;
 var homeCoords = [40.914722, -77.774722];
-var initZoom = 8;
+var initZoom = setInitialMapZoom(windowWidth);
 var zoomHomeControl;
 // layer control
 var basemapGroup;
@@ -22,7 +22,19 @@ var esriGray;
 var esriStreets;
 var pmgMembers;
 
-
+/****************
+*** Functions ***
+*****************/
+// Change map zoom level based upon viewport width
+function viewportChangeMapZoom(windowWidth) {
+    if (windowWidth < 500) {
+        map.setZoom(6);
+    }  else if (windowWidth >= 500 && windowWidth < 1000) {
+        map.setZoom(7);
+    }  else {
+       map.setZoom(8);
+    }
+}
 
 /*********************
 *** Map & Controls ***
@@ -61,17 +73,15 @@ basemapGroup = {
     'Streets': esriStreets
 };
 
-//overlayGroup = {};
-
-/* Original
-layerControl = L.control.layers(basemapGroup, overlayGroup, {
-    collapsed: setLayerControlCollapsedValue(windowWidth) 
+layerControl = L.control.layers(basemapGroup, null, {
+    collapsed: selectLayerControlCollapsed(windowWidth)
 }).addTo(map);
-*/
-layerControl = L.control.layers(basemapGroup, null).addTo(map);
 
 // Geocode module
 addressLocator();
 
 // GeoLocate module
 locateControl();
+
+// not working properly
+window.addEventListener('resize', viewportChangeMapZoom, false);
