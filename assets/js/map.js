@@ -72,3 +72,6 @@ layerControl = L.control.layers(basemapGroup, null).addTo(map);
 
 // Geocode module
 addressLocator();
+
+// GeoLocate module
+locateControl();
