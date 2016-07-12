@@ -6,7 +6,6 @@
         <title>PAMAGIC Members Map</title>
         <meta name="description" content="Map of current members to PAMAGIC">
         <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-
         <!--<link rel="apple-touch-icon" href="apple-touch-icon.png">-->
         <!-- Place favicon.ico in the root directory -->
         <!-- Bootstrap -->
@@ -20,8 +19,7 @@
         <!-- ESRI Leaflet Geocoder -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/leaflet.esri.geocoder/1.0.2/esri-leaflet-geocoder.css" />
         <!-- Custom App Styles -->
-        <link rel="stylesheet" href="assets/css/style.css" />
-        
+        <link rel="stylesheet" href="assets/css/style.css" />        
         <!-- Font Awesome -->
         <script src="https://use.fontawesome.com/fb6bc9cb24.js"></script>
     </head>
@@ -29,7 +27,6 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
         <nav class="navbar navbar-default navbar-fixed-top">
           <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -57,8 +54,9 @@
               </ul>              
              </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
-        </nav>
-        <div id="map"></div>
+        </nav> <!-- /. nav -->
+        <div id="map"></div> <!-- map container -->
+        <!-- Modals -->
         <!-- About Modal -->
         <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModalLabel">
           <div class="modal-dialog" role="document">
@@ -70,6 +68,7 @@
               <div class="modal-body">
                 <p>This map shows the locations of current PAMAGIC members (2015-2016).  You can search for an address or member in the form at the top right.</p>
                 <p>PAMAGIC is a professional organization that consists of mapping and geographic information specialists from throughout Pennsylvania.</p>
+                <p>Vist our <a href="http://www.pamagic.org/" target="_blank">website</a> for more information.</p>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -88,7 +87,7 @@
               <div class="modal-body">
                   <p>This map is for general reference purposes only.  It is still under development.</p>
                   <p>The membership database was geocoded using the ESRI World Geocoding service.  The mapped location is dependent upon the information provided in the database and the geocoding service.<p>
-                  <p class="text-danger">If the address information was empty, then the member will not appear on this map.  If a member provided.</p>                  
+                  <p class="text-danger">If the address information was empty, then the member will not appear on this map.  If a member provided only a city and state, the location will not be accurate..</p>                  
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -96,7 +95,7 @@
             </div>
           </div>
         </div> <!-- ./ Disclaimer Modal -->
-        
+        <!-- /. Modals -->
         <!-- jQuery -->
         <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
         <!-- Bootstrap -->
