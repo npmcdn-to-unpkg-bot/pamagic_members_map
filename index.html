@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>PAMAGIC Members Map</title>
+        <meta name="description" content="Map of current members to PAMAGIC">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+        <!--<link rel="apple-touch-icon" href="apple-touch-icon.png">-->
+        <!-- Place favicon.ico in the root directory -->
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <!-- Leaflet -->
+        <link rel="stylesheet" href="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.css" />
+        <!-- Leaflet Zoom Home -->
+        <link rel="stylesheet" href="assets/js/leaflet.zoomhome/leaflet.zoomhome.css" />
+        <!-- Leaflet Locate -->
+        <link rel="stylesheet" href="assets/js/leaflet.locate/leaflet.locate.min.css" />
+        <!-- ESRI Leaflet Geocoder -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/leaflet.esri.geocoder/1.0.2/esri-leaflet-geocoder.css" />
+        <!-- Custom App Styles -->
+        <link rel="stylesheet" href="assets/css/style.css" />        
+        <!-- Font Awesome -->
+        <script src="https://use.fontawesome.com/fb6bc9cb24.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">PAMAGIC Membership Map</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul id="navList" class="nav navbar-nav navbar-right">
+                <li><a href="#" data-toggle="modal" data-target="#aboutModal">About</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#disclaimerModal">Disclaimer</a></li>
+                <li class="visible-xs-block"><a href="#" data-toggle="modal" data-target="#geosearchModal">Address and Members Search</a></li>  
+                <li class="hidden-xs">
+                  <form class="navbar-form navbar-search" role="search">
+                    <div id="geocode" class="geocode-navbar"></div>                        
+                  </form>
+                </li>  
+              </ul>              
+             </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav> <!-- /. nav -->
+        <div id="map"></div> <!-- map container -->
+        <!-- Modals -->
+        <!-- About Modal -->
+        <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="aboutModalLabel">About the Map</h4>
+              </div>
+              <div class="modal-body">
+                <p>This map shows the locations of current PAMAGIC members (2015-2016).  You can search for an address or member in the form at the top right.</p>
+                <p>PAMAGIC is a professional organization that consists of mapping and geographic information specialists from throughout Pennsylvania.</p>
+                <p>Vist our <a href="http://www.pamagic.org/" target="_blank">website</a> for more information.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div> <!-- ./ About Modal -->
+        <!-- Disclaimer Modal -->
+        <div class="modal fade" id="disclaimerModal" tabindex="-1" role="dialog" aria-labelledby="disclaimerModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="disclaimerModalLabel">Disclaimer</h4>
+              </div>
+              <div class="modal-body">
+                  <p>This map is for general reference purposes only.  It is still under development.</p>
+                  <p>The membership database was geocoded using the ESRI World Geocoding service.  The mapped location is dependent upon the information provided in the database and the geocoding service.<p>
+                  <p class="text-danger">If the address information was empty, then the member will not appear on this map.  If a member provided only a city and state, the location will not be accurate..</p>                  
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div> <!-- ./ Disclaimer Modal -->
+        <!-- Geosearch Modal - only for below breakpoint -->
+        <div class="modal fade" id="geosearchModal" tabindex="-1" role="dialog" aria-labelledby="geosarchModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="geosarchModalLabel">Address and Members Search</h4>
+              </div>
+              <div class="modal-body"></div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div> <!-- ./ Geosearch Modal -->
+        <!-- /. Modals -->
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        <!-- Bootstrap -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <!-- Leaflet -->
+        <script src="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.js"></script>
+        <!-- Leaflet Zoom Home -->
+        <script src="assets/js/leaflet.zoomhome/leaflet.zoomhome.min.js"></script>
+        <!-- Leaflet Locate -->
+        <script src="assets/js/leaflet.locate/leaflet.locate.min.js"></script>
+        <!-- ESRI Leaflet -->
+        <script src="https://cdn.jsdelivr.net/leaflet.esri/1.0.4/esri-leaflet.js"></script>        
+        <!-- ESRI Leaflet Renderers -->
+        <script src="https://cdn.jsdelivr.net/leaflet.esri.renderers/1.0.1/esri-leaflet-renderers.js"></script>
+        <!-- ESRI Leaflet Geocoder -->
+        <script src="https://cdn.jsdelivr.net/leaflet.esri.geocoder/1.0.2/esri-leaflet-geocoder.js"></script>
+        <!-- Map Functions Module -->
+        <script src="assets/js/mapFunctions.js"></script>
+        <!-- Geocode Module -->
+        <script src="assets/js/geocode.js"></script>
+        <!-- GeoLocate Module -->
+        <script src="assets/js/leaflet.locate/geolocate.js"></script>
+        <!-- Map App -->
+        <script src="assets/js/map.js"></script>
+    </body>
+</html>
