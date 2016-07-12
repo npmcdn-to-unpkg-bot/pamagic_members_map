@@ -3,24 +3,13 @@
 function setInitialMapZoom(windowWidth) {
     var mapZoom;    
     if (windowWidth < 500) {
-        mapZoom = 9; 
+        mapZoom = 6; 
     } else if (windowWidth >= 500 && windowWidth < 1000) {
-        mapZoom = 10; 
+        mapZoom = 7; 
     } else {
-        mapZoom = 11;  
+        mapZoom = 8;  
     }
     return mapZoom;
-}
-
-// Change map zoom level based upon viewport width
-function viewportChangeMapZoom(windowWidth) {
-    if (windowWidth < 500) {
-        map.setZoom(9);
-    }  else if (windowWidth >= 500 && windowWidth < 1000) {
-        map.setZoom(10);
-    }  else {
-       map.setZoom(11);
-    }
 }
 
 // Set max height of pop-up window 
@@ -45,14 +34,24 @@ function setPopupMaxWidth(windowWidth) {
     return maxWidth;
 }
 
+// Determines if basemap selector is expanded or collapsed
+function selectLayerControlCollapsed(windowWidth) {
+    var isCollapsed;
+    if (windowWidth < 768) {
+        isCollapsed = true;
+    } else {
+        isCollapsed = false;
+    }
+    return isCollapsed;
+}
+
+
 /**********************
 *** Event Listeners ***
 ***********************/
-
 // Resize Event
-window.addEventListener('resize', function() {
-    viewportChangeMapZoom();
-}, false);
+// Not working
+//window.addEventListener('resize', viewportChangeMapZoom, false);
 
 $(document).ready(function(){
     // Search
@@ -79,7 +78,7 @@ $(document).ready(function(){
         }
     }
     $(window).resize(function() {
-        attachSearch();
+        attachSearch();       
     });
     attachSearch();
 });<!-- jQuery -->
