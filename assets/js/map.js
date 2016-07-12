@@ -12,7 +12,7 @@ var windowArea = windowWidth * windowHeight;
 var map;
 var homeCoords = [40.914722, -77.774722];
 var initZoom = 8;
-var zoomHome;
+var zoomHomeControl;
 // layer control
 var basemapGroup;
 //var overlayGroup;
@@ -31,26 +31,17 @@ var pmgMembers;
 // Map
 map = L.map('map', {
    center: homeCoords,
-   zoom: initZoom      
-});
-
-/*
-map = L.map('map', {
-   center: homeCoords,
    zoom: initZoom,
-   zoomControl: false   
+   zoomControl: false
 });
-*/
 
 // Zoom Home Control
-/*
 zoomHomeControl = L.Control.zoomHome({
     position: 'topleft',
     zoomHomeTitle: 'Full map extent',
     homeCoordinates: homeCoords,
     homeZoom: initZoom
 }).addTo(map);
-*/
 
 // Layers
 esriGray = L.esri.basemapLayer('Gray').addTo(map);
