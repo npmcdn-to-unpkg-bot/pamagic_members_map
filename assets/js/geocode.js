@@ -23,9 +23,9 @@ function addressLocator() {
     addressSearchControl = new L.esri.Geocoding.Controls.Geosearch({
         providers: [
             new L.esri.Geocoding.Controls.Geosearch.Providers.FeatureLayer({
-            url: 'http://services2.arcgis.com/1mAVlDOwOjpt8pyU/arcgis/rest/services/PAMAGIC_Members/FeatureServer/0',
+            url: 'https://services2.arcgis.com/1mAVlDOwOjpt8pyU/arcgis/rest/services/PAMAGIC_Members/FeatureServer/0',
             label: 'PAMAGIC Members',    
-            searchFields: ['FirstName', 'LastName'],
+            searchFields: ['FirstName', 'LastName', 'City_1'],
                 formatSuggestion: function(feature){
                 return feature.properties.FirstName + ' ' + feature.properties.LastName;
             }
