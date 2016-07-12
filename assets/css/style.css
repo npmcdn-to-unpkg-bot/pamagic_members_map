@@ -30,7 +30,9 @@ li {
 }
 
 .navbar-default .navbar-brand,
-.navbar-default .navbar-nav>li>a {
+.navbar-default .navbar-nav>li>a,
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-nav>li>a:focus{
     color: #fff;
 }
 
@@ -80,6 +82,15 @@ li {
 
 /* 767px */
 @media screen and (max-width: 767px) {    
+    .navbar-toggle,
+    .navbar-default .navbar-toggle:focus{
+        background: #fff;
+    }
+    
+    .navbar-default .navbar-toggle:active {
+        background-color: #FFFF00;
+    }
+    
     #navList h5 {
         color: #ddd;
         padding-left: 15px;
@@ -87,7 +98,7 @@ li {
         font-size: 1.1em;
     }
     
-    .geocoder-control-input {
+    .geocoder-control {
        left: 15px;
     }
     
