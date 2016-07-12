@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 // Set the initial map zoom level based upon viewport width
 function setInitialMapZoom(windowWidth) {
     var mapZoom;    
@@ -15,7 +15,7 @@ function setInitialMapZoom(windowWidth) {
 // Set max height of pop-up window 
 function setPopupMaxHeight(windowArea) {
     var maxHeight;
-    if (windowArea < 315000 ) {
+    if (windowArea < 315000) {
         maxHeight = 150;
     } else {
         maxHeight = 300;
@@ -26,7 +26,7 @@ function setPopupMaxHeight(windowArea) {
 // Set max width of pop-up window 
 function setPopupMaxWidth(windowWidth) {
     var maxWidth;
-    if (windowWidth < 450 ) {
+    if (windowWidth < 450) {
         maxWidth = 240;
     } else {
         maxWidth = 300;
@@ -53,32 +53,24 @@ function selectLayerControlCollapsed(windowWidth) {
 // Not working
 //window.addEventListener('resize', viewportChangeMapZoom, false);
 
-$(document).ready(function(){
+$(document).ready(function() {
     // Search
     var input = $(".geocoder-control-input");
-    /*
-    input.focus(function(){
-        $("#panelSearch .panel-body").css("height", "150px");
-    });
-    input.blur(function(){
-        $("#panelSearch .panel-body").css("height", "auto");
-    });
-    */
     // Attach search control for desktop or mobile
     function attachSearch() {
-        var parentName = $(".geocoder-control").parent().attr("id"),
-            geocoder = $(".geocoder-control"),
-            width = $(window).width();
+        var parentName = $(".geocoder-control").parent().attr("id");
+        var geocoder = $(".geocoder-control");
+        var width = $(window).width();
         if (width <= 767 && parentName !== "geocodeMobile") {
             geocoder.detach();
-            $('#navList').append(geocoder);
-        } else if (width > 767 && parentName !== "geocode"){
+            $('#geosearchModal .modal-body').append(geocoder);
+        } else if (width > 767 && parentName !== "geocode") {
             geocoder.detach();
             $("#geocode").append(geocoder);
         }
     }
     $(window).resize(function() {
-        attachSearch();       
+        attachSearch();      
     });
     attachSearch();
-});<!-- jQuery -->
+});
