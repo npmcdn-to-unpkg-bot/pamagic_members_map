@@ -44,7 +44,7 @@
               <ul id="navList" class="nav navbar-nav navbar-right">
                 <li><a href="#" data-toggle="modal" data-target="#aboutModal">About</a></li>
                 <li><a href="#" data-toggle="modal" data-target="#disclaimerModal">Disclaimer</a></li>
-                <li class="visible-xs-block"><a href="#" data-toggle="modal" data-target="#geosearchModal">Address and Members Search</a></li>  
+                <li class="visible-xs-block"><a id="mobileGeosearchTrigger" href="#">Address and Members Search</a></li>  
                 <li class="hidden-xs">
                   <form class="navbar-form navbar-search" role="search">
                     <div id="geocode" class="geocode-navbar"></div>                        
@@ -94,22 +94,17 @@
             </div>
           </div>
         </div> <!-- ./ Disclaimer Modal -->
-        <!-- Geosearch Modal - only for below breakpoint -->
-        <div class="modal fade" id="geosearchModal" tabindex="-1" role="dialog" aria-labelledby="geosarchModalLabel">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="geosarchModalLabel">Address and Members Search</h4>
-              </div>
-              <div class="modal-body"></div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div> <!-- ./ Geosearch Modal -->
         <!-- /. Modals -->
+        <!-- Geosearch Panel -->
+        <div id="geosearchPanel" class="panel panel-default">
+          <div class="panel-heading ">
+              <h3 class="panel-title">Address and Members Search <span class="pull-right">Close</span></h3>
+                          
+          </div>
+          <div class="panel-body"></div>
+        </div>
+        <!-- Panels -->        
+        
         <!-- jQuery -->
         <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
         <!-- Bootstrap -->

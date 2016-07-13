@@ -68,6 +68,17 @@ li {
     margin: 15px 0;
 }
 
+/*** Panels ***/
+#geosearchPanel {
+    display: none;
+    position: absolute;
+    top: 5%;
+    left: 2%;
+    height: 90%;
+    width: 96%;
+    z-index: 2000;
+}
+
 /*** Media Query ***/
 /* 314px */
 @media screen and (max-width: 314px) {

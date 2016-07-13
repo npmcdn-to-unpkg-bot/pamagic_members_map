@@ -45,6 +45,13 @@ function selectLayerControlCollapsed(windowWidth) {
     return isCollapsed;
 }
 
+$('#mobileGeosearchTrigger').click(function() {
+    $('#geosearchPanel').show();
+});
+
+$('#geosearchPanel span').click(function() {
+    $('#geosearchPanel').hide();
+});
 
 /**********************
 *** Event Listeners ***
@@ -63,7 +70,7 @@ $(document).ready(function() {
         var width = $(window).width();
         if (width <= 767 && parentName !== "geocodeMobile") {
             geocoder.detach();
-            $('#geosearchModal .modal-body').append(geocoder);
+            $('#geosearchPanel .panel-body').append(geocoder);
         } else if (width > 767 && parentName !== "geocode") {
             geocoder.detach();
             $("#geocode").append(geocoder);
