@@ -94,6 +94,10 @@ li {
         font-size: 1.1em;
     }
     
+    #geosearchModal {
+        position: absolute;
+    }
+    
     #geosearchModal .modal-body {
         min-height: 200px;
     }
