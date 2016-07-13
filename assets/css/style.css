@@ -98,6 +98,10 @@ li {
         min-height: 200px;
     }
     
+    .geocoder-control .geocoder-control-expanded .leaflet-control {
+        z-index: 2000;
+    }
+    
     .geocoder-control-expanded, 
     .leaflet-touch .geocoder-control-expanded {
         margin: 10px 0;
