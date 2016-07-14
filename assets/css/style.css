@@ -68,16 +68,6 @@ li {
     margin: 15px 0;
 }
 
-/*** Panels ***/
-#geosearchPanel {
-    display: none;
-    position: absolute;
-    top: 5%;
-    left: 2%;
-    height: 90%;
-    width: 96%;
-    z-index: 2000;
-}
 
 /*** Media Query ***/
 /* 314px */
@@ -98,19 +88,19 @@ li {
         background-color: #FFFF00;
     }
     
-    #navList h5 {
+    #mobileGeocodeContainer {
+        min-height: 200px;
+    }
+    
+    div.geocoder-control-suggestions.leaflet-bar {
+        max-height: 200px;
+    }
+    
+    #mobileGeocodeContainer h5 {
         color: #ddd;
         padding-left: 15px;
         font-weight: bold;
         font-size: 1.1em;
-    }
-    
-    #geosearchModal {
-        position: absolute;
-    }
-    
-    #geosearchModal .modal-body {
-        min-height: 200px;
     }
     
     .geocoder-control .geocoder-control-expanded .leaflet-control {
@@ -120,6 +110,7 @@ li {
     .geocoder-control-expanded, 
     .leaflet-touch .geocoder-control-expanded {
         margin: 10px 0;
+        left: 15px;
         width: 75%;
         min-width: 275px;
     }    
