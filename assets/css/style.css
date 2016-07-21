@@ -88,6 +88,15 @@ li {
         background-color: #FFFF00;
     }
     
+    #geocodeForm {
+        min-height: 100px;
+    }
+    
+    #geocodeForm h5 {
+        margin-left: 15px;
+        color: #fff;        
+    }
+    
     #mobileGeocodeContainer {
         min-height: 200px;
     }
