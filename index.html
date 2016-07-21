@@ -44,12 +44,9 @@
               <ul id="navList" class="nav navbar-nav navbar-right">
                 <li><a href="#" data-toggle="modal" data-target="#aboutModal">About</a></li>
                 <li><a href="#" data-toggle="modal" data-target="#disclaimerModal">Disclaimer</a></li>
-                <div id="mobileGeocodeContainer">
-                  <hr class="visible-xs-block" />
-                  <h5 class="visible-xs-block">Member or Address Search</h5>
-                </div>
-                <li class="hidden-xs">
-                  <form class="navbar-form navbar-search" role="search">
+                <li>
+                  <form id="geocodeForm" class="navbar-form navbar-search" role="search">
+                    <h5 class="visible-xs-block">Address and Member Search</h5>  
                     <div id="geocode" class="geocode-navbar"></div>                        
                   </form>
                 </li>  
