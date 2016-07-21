@@ -44,40 +44,19 @@ function selectLayerControlCollapsed(windowWidth) {
     }
     return isCollapsed;
 }
-/*
-$('#mobileGeosearchTrigger').click(function() {
-    $('#geosearchPanel').show();
-});
 
-$('#geosearchPanel span').click(function() {
-    $('#geosearchPanel').hide();
-});
-*/
+
 /**********************
 *** Event Listeners ***
 ***********************/
-// Resize Event
-// Not working
-//window.addEventListener('resize', viewportChangeMapZoom, false);
 
 $(document).ready(function() {
-    // Search
-    var input = $(".geocoder-control-input");
     // Attach search control for desktop or mobile
     function attachSearch() {
         var parentName = $(".geocoder-control").parent().attr("id");
         var geocoder = $(".geocoder-control");
-        var width = $(window).width();
-        if (width <= 767 && parentName !== "geocodeMobile") {
-            geocoder.detach();
-            $('#mobileGeocodeContainer').append(geocoder);
-        } else if (width > 767 && parentName !== "geocode") {
-            geocoder.detach();
-            $("#geocode").append(geocoder);
-        }
-    }
-    $(window).resize(function() {
-        attachSearch();      
-    });    
+        $("#geocode").append(geocoder);
+    }   
+    
     attachSearch();    
 });
